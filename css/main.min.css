@@ -3143,14 +3143,30 @@ body {
 
 .header-menu {
   font-family: 'SourceSansPro-Bold', sans-serif;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  overflow: hidden; }
   .header-menu a {
-    display: inline-block;
-    margin-left: 15px;
-    box-shadow: inset 0 0 0 0 currentColor;
-    transition: all 100ms ease; }
-    .header-menu a:hover {
-      box-shadow: inset 0 -2px 0 0 currentColor; }
+    padding: 0 0 5px;
+    margin-left: 25px;
+    overflow: hidden;
+    font-weight: 400; }
+    .header-menu a span {
+      position: relative;
+      display: inline-block;
+      -webkit-transform-origin: center;
+          -ms-transform-origin: center;
+              transform-origin: center;
+      transition: all 300ms ease; }
+      .header-menu a span:before {
+        content: attr(data-hover);
+        position: absolute;
+        top: 100%;
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0); }
+    .header-menu a:hover span {
+      -webkit-transform: translateY(-100%);
+          -ms-transform: translateY(-100%);
+              transform: translateY(-100%); }
 
 .header-center {
   text-align: right;
@@ -3393,7 +3409,9 @@ section {
   .portfolio__item:hover img {
     -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
-            transform: scale(1.2); }
+            transform: scale(1.2);
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%); }
   .portfolio__item:hover .overlay {
     opacity: 1; }
   .portfolio__item:hover h5, .portfolio__item:hover p {
@@ -3903,7 +3921,7 @@ footer {
   .header-center p {
     max-width: 100%;
     background: 100% 0 linear-gradient(90deg, #EAE7E2, transparent);
-    padding: 10px 0; } }
+    padding: 10px 0 10px 10px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {

@@ -86,14 +86,32 @@ body
 .header-menu 
 	font-family: 'SourceSansPro-Bold', sans-serif 
 	text-transform: uppercase
+	overflow: hidden
 	a
-		//padding: 0 0 5px
-		display: inline-block
-		margin-left: 15px
-		box-shadow: inset 0 0 0 0 currentColor
-		+mt(100ms)
-		&:hover
-			box-shadow: inset 0 -2px 0 0 currentColor
+		padding: 0 0 5px
+		// display: inline-block
+		margin-left: 25px
+		// box-shadow: inset 0 0 0 0 currentColor
+		// +mt(100ms)
+		// &:hover
+		// 	box-shadow: inset 0 -2px 0 0 currentColor
+		overflow: hidden
+		//padding: 20px
+		//height: 1em
+		font-weight: 400
+		span
+			position: relative
+			display: inline-block
+			transform-origin: center
+			+mt(300ms)
+			&:before
+				content: attr(data-hover)
+				position: absolute
+				top: 100%
+				//font-weight: 600
+				transform: translate3d(0, 0, 0)
+		&:hover span
+			transform: translateY(-100%)		
 
 
 .header-center
@@ -315,6 +333,7 @@ section
 		+mt(600ms)
 	&:hover img
 		transform: scale(1.2)	
+		filter: grayscale(100%)
 	&:hover .overlay
 		opacity: 1	
 	&:hover h5, &:hover p
@@ -557,6 +576,11 @@ footer
 	padding: 78px 0 40px	
 	color: #999
 	background: $main-color
+
+	// background-image: url(../img/border.png)
+	// background-repeat: repeat-x
+	// background-position: bottom
+
 	p
 		font-size: 14px
 	form
