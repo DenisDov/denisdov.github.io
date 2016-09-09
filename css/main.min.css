@@ -3409,9 +3409,7 @@ section {
   .portfolio__item:hover img {
     -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
-            transform: scale(1.2);
-    -webkit-filter: grayscale(100%);
-            filter: grayscale(100%); }
+            transform: scale(1.2); }
   .portfolio__item:hover .overlay {
     opacity: 1; }
   .portfolio__item:hover h5, .portfolio__item:hover p {
