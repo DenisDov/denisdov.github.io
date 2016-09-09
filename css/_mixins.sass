@@ -1,0 +1,67 @@
+
+// Transition mixin
+=mt($time)
+	transition: all $time ease
+
+// Triangle mixin
+=arrow($width: 20px, $height: 20px, $direction: up, $color: red) //+arrow(5px, 10px, right, #eee)
+	
+	width: 0 
+	height: 0
+	
+	// Right
+	@if $direction == right
+		border-top: $height/2 solid transparent
+		border-bottom: $height/2 solid transparent
+		border-left: $width solid $color
+
+	// Left
+	@if $direction == left
+		border-top: $height/2 solid transparent
+		border-bottom: $height/2 solid transparent
+		border-right: $width solid $color
+
+	// Up
+	@if $direction == up
+		border-left: $width/2 solid transparent
+		border-right: $width/2 solid transparent
+		border-bottom: $height solid $color
+
+	// Down
+	@if $direction == down
+		border-left: $width/2 solid transparent
+		border-right: $width/2 solid transparent
+		border-top: $height solid $color	
+
+// Center vertically and/or horizontally an absolute positioned element
+@mixin center($xy:xy)
+	@if $xy == xy
+		left: 50%
+		top: 50%
+		bottom: auto
+		right: auto
+		transform: translateX(-50%) translateY(-50%)
+
+	@else if $xy == x
+		left: 50%
+		right: auto
+		transform: translateX(-50%)
+
+	@else if $xy == y
+		top: 50%
+		bottom: auto
+		transform: translateY(-50%)		
+
+// Hide text
+=text-hide
+	color: transparent
+	text-shadow: none
+	background-color: transparent
+	border: 0
+
+// Super light grid system (+column(0.5))
+@mixin column($percentage, $float-direction:left) 
+	width: 100% * $percentage
+	float: $float-direction
+
+	
