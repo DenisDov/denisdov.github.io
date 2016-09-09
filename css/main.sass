@@ -515,6 +515,12 @@ blockquote
 	&:hover
 		svg
 			fill: #e64a19
+		a.twitter-link
+			color: #fff	
+			&:after
+				transform: translate3d(0, 0, 0)
+				transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1)
+
 	p
 		font-size: 20px
 		line-height: 1.6
@@ -523,6 +529,29 @@ blockquote
 .twitter-user
 	margin: 40px auto 35px
 
+a.twitter-link
+	display: inline-block
+	overflow: hidden
+	transition: color .3s cubic-bezier(0.11, 0.7, 0, 1)
+	position: relative
+	z-index: 1
+	padding: 2px 6px
+	&:after
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		display: block
+		background-color: #e64a19
+		content: ""
+		transform: translate3d(0, 100%, 0)
+		z-index: -1
+	// &:hover
+	// 	&:after
+	// 		transform: translate3d(0, 0, 0)
+	// 		transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1)
+	// 	color: #eee
 
 footer
 	padding: 78px 0 40px	

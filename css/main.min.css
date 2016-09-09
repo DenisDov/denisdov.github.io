@@ -3648,6 +3648,15 @@ blockquote {
 .who-tweet:hover svg {
   fill: #e64a19; }
 
+.who-tweet:hover a.twitter-link {
+  color: #fff; }
+  .who-tweet:hover a.twitter-link:after {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    transition: -webkit-transform 0.3s cubic-bezier(0.11, 0.7, 0, 1);
+    transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1);
+    transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1), -webkit-transform 0.3s cubic-bezier(0.11, 0.7, 0, 1); }
+
 .who-tweet p {
   font-size: 20px;
   line-height: 1.6;
@@ -3655,6 +3664,26 @@ blockquote {
 
 .twitter-user {
   margin: 40px auto 35px; }
+
+a.twitter-link {
+  display: inline-block;
+  overflow: hidden;
+  transition: color 0.3s cubic-bezier(0.11, 0.7, 0, 1);
+  position: relative;
+  z-index: 1;
+  padding: 2px 6px; }
+  a.twitter-link:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    background-color: #e64a19;
+    content: "";
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    z-index: -1; }
 
 footer {
   padding: 78px 0 40px;
