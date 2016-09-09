@@ -228,4 +228,12 @@ $(".carousel-a").owlCarousel({
 		}
 	});
 
+  $('.btn-send').click(function(e) {
+  	$(this).toggleClass('clicked');
+  	$('.btn-send span').text(function(i, text) {
+  		return text === "Sent!" ? "Send" : "Sent!";
+  	});
+  	e.preventDefault();
+  });
+
  });

@@ -42,35 +42,26 @@ body
 // .mfp-wrap ~ *
 // 	filter: blur(10px)		
 
-// .mfp-preloader
-// 	width: 30px
-// 	height: 30px
-// 	background-color: #FFF
-// 	opacity: 0.65
-// 	margin: 0 auto
-// 	-webkit-animation: rotateplane 1.2s infinite ease-in-out
-// 	animation: rotateplane 1.2s infinite ease-in-out
-
-// @-webkit-keyframes rotateplane
-// 	0%
-// 		-webkit-transform: perspective(120px)
-
-// 	50%
-// 		-webkit-transform: perspective(120px) rotateY(180deg)
-
-// 	100%
-// 		-webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+.mfp-preloader
+	width: 30px
+	height: 30px
+	background-color: #FFF
+	opacity: 0.65
+	margin: 0 auto
+	animation: rotateplane 1.2s infinite ease-in-out
 
 
-// @keyframes rotateplane
-// 	0%
-// 		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
 
-// 	50%
-// 		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
 
-// 	100%
-// 		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)			
+@keyframes rotateplane
+	0%
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+
+	50%
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+
+	100%
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)			
 
 
 .main-header
@@ -570,8 +561,6 @@ footer
 			color: #eee
 
 
-
-
 .footer__logo
 	font-size: 22px
 	text-transform: uppercase
@@ -620,6 +609,92 @@ footer
 		+mt(200ms)
 		&:hover
 			color: #eee
+
+.btn-send
+	overflow: visible
+	position: relative
+	background-color: transparent
+	border: none
+	color: #999
+	text-align: left
+	display: block
+	width: 145px
+	cursor: pointer
+	text-transform: uppercase
+	span
+		display: block
+	&:hover
+		color: #eee
+		
+		svg
+			transform: rotate(10deg)
+			transition: transform .15s
+		
+	
+	svg
+		position: absolute
+		top: -2px
+		right: 66px
+		height: 30px
+		width: auto
+		transform-origin: center
+		transition: transform .15s
+		
+		path
+			fill: #e64a19
+	
+	&.clicked
+		color: #ddd
+		padding-right: 6px
+		animation: bounce-in .3s
+		cursor: default
+
+		svg
+			animation: flyaway 1.3s linear
+			top: -80px
+			right: -9999px
+			
+			path
+				fill: #eee
+
+@keyframes flyaway
+	0%
+		transform: rotate(10deg)
+		top: 13px
+		right: 25px
+		height: 30px
+	5%
+		transform: rotate(10deg)
+		top: 13px
+		right: 0px
+		height: 30px
+	20%
+		transform: rotate(-20deg)
+		top: 13px
+		right: -130px
+		height: 45px  
+	40%
+		transform: rotate(10deg)
+		top: -40px
+		right: -280px
+		opacity: 1
+	100%
+		transform: rotate(60deg)
+		top: -200px
+		right: -1000px
+		height: 0
+		opacity: 0
+
+@keyframes bounce-in
+	0%
+		padding-right: 30px
+	40%
+		padding-right: 6px
+	50%
+		padding-left: 30px
+	100%
+		padding-left: 6px
+
 
 .go-top
 	position: fixed
