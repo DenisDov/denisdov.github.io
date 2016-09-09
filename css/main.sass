@@ -553,12 +553,12 @@ footer
 		float: right		
 	input[type="text"]
 		width: 100%	
-	input[type="submit"]
-		background: transparent	
-		padding-left: 0
-		+mt(200ms)
-		&:hover
-			color: #eee
+	// input[type="submit"]
+	// 	background: transparent	
+	// 	padding-left: 0
+	// 	+mt(200ms)
+	// 	&:hover
+	// 		color: #eee
 
 
 .footer__logo
@@ -612,88 +612,49 @@ footer
 
 .btn-send
 	overflow: visible
-	position: relative
+	padding: 0
 	background-color: transparent
 	border: none
 	color: #999
 	text-align: left
-	display: block
-	width: 145px
 	cursor: pointer
 	text-transform: uppercase
 	span
-		display: block
-	&:hover
-		color: #eee
-		
-		svg
-			transform: rotate(10deg)
-			transition: transform .15s
-		
-	
+		display: inline-block
+		vertical-align: middle
 	svg
-		position: absolute
-		top: -2px
-		right: 66px
-		height: 30px
-		width: auto
+		display: inline-block
+		vertical-align: middle
+		margin-left: 20px
 		transform-origin: center
-		transition: transform .15s
-		
+		+mt(300ms)		
 		path
 			fill: #e64a19
+	&:hover
+		color: #eee	
+		svg
+			transform: rotate(10deg)
 	
 	&.clicked
 		color: #ddd
-		padding-right: 6px
-		animation: bounce-in .3s
 		cursor: default
 
 		svg
-			animation: flyaway 1.3s linear
-			top: -80px
-			right: -9999px
-			
+			animation: flyaway 0.5s linear forwards			
 			path
 				fill: #eee
 
 @keyframes flyaway
-	0%
-		transform: rotate(10deg)
-		top: 13px
-		right: 25px
-		height: 30px
-	5%
-		transform: rotate(10deg)
-		top: 13px
-		right: 0px
-		height: 30px
-	20%
-		transform: rotate(-20deg)
-		top: 13px
-		right: -130px
-		height: 45px  
-	40%
-		transform: rotate(10deg)
-		top: -40px
-		right: -280px
-		opacity: 1
-	100%
-		transform: rotate(60deg)
-		top: -200px
-		right: -1000px
-		height: 0
-		opacity: 0
+	10%
+		transform: translate(-10px, 10px)
 
-@keyframes bounce-in
-	0%
-		padding-right: 30px
 	40%
-		padding-right: 6px
-	50%
-		padding-left: 30px
+		transform: translate(-15px, 15px)
+		opacity: 1
+
 	100%
-		padding-left: 6px
+		transform: translate(100px, -100px)
+		opacity: 0
 
 
 .go-top

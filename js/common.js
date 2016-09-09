@@ -67,7 +67,6 @@ $(function() {
 		}, 300);
 	});
 
-	var scrollBottom = $(window).scrollTop() + $(window).height();
 
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 1000) {
@@ -228,7 +227,7 @@ $(".carousel-a").owlCarousel({
 		}
 	});
 
-  $('.btn-send').click(function(e) {
+  $('.btn-send').on('click', function(e) {
   	$(this).toggleClass('clicked');
   	$('.btn-send span').text(function(i, text) {
   		return text === "Sent!" ? "Send" : "Sent!";
