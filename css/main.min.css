@@ -660,7 +660,6 @@ body {
           filter: blur(10px); }
 
 .main-header {
-  background: url(../img/header-bg.jpg) no-repeat center/cover;
   min-height: 100vh;
   padding: 50px 0;
   display: -webkit-flex;
