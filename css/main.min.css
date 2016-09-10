@@ -746,11 +746,31 @@ body {
     font-size: 18px;
     max-width: 50%; }
   .header-center .btn {
+    font-size: 18px;
     border: 2px solid #212121;
-    font-size: 18px; }
+    padding: 15px 70px;
+    position: relative;
+    outline: none;
+    background: none;
+    overflow: hidden;
+    transition: all 200ms ease; }
+    .header-center .btn:before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: 110%;
+      width: 30px;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.2);
+      -webkit-transform: rotate(20deg);
+          -ms-transform: rotate(20deg);
+              transform: rotate(20deg);
+      transition: all 500ms ease; }
     .header-center .btn:hover {
-      color: white;
-      background: #212121; }
+      background: #212121;
+      color: white; }
+      .header-center .btn:hover:before {
+        right: -50%; }
     .header-center .btn:active {
       -webkit-transform: translateY(3px);
           -ms-transform: translateY(3px);

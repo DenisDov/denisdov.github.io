@@ -132,15 +132,41 @@ body
 		margin: 0 0 60px
 		font-size: 18px
 		max-width: 50%
+	// .btn
+	// 	border: 2px solid $main-color
+	// 	font-size: 18px
+	// 	&:hover
+	// 		color: white
+	// 		background: $main-color
+	// 	&:active
+	// 		transform: translateY(3px)
 	.btn
-		border: 2px solid $main-color
 		font-size: 18px
-		&:hover
-			color: white
+		border: 2px solid $main-color
+		padding: 15px 70px
+		position: relative
+		outline: none
+		background: none
+		overflow: hidden
+		+mt(200ms)
+		&:before 
+			content: ''
+			position: absolute
+			top: -40%
+			right: 110%
+			width: 30px
+			height: 200%
+			background: rgba(white, .2)
+			transform: rotate(20deg)
+			+mt(500ms)
+		&:hover 
 			background: $main-color
+			color: white
+			&:before 
+				right: -50%
 		&:active
-			transform: translateY(3px)
-			
+			transform: translateY(3px)		
+				
 
 ///sections==================
 
