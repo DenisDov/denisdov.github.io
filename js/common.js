@@ -27,7 +27,7 @@ $(function() {
 
 	var wow = new WOW({  
 		offset: 50,
-		mobile: true    
+		mobile: false    
 	});
 	wow.init();
 

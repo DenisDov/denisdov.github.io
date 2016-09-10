@@ -3,7 +3,7 @@
 //@import '../libs/remodal/remodal-default-theme'
 @import '../libs/owl/owl.carousel'
 @import '../libs/magnific-popup/dist/magnific-popup.sass'
-@import '../libs/animate/animate'
+//@import '../libs/animate/animate'
 
 /// ================Mixins===================
 @import 'mixins'
@@ -36,32 +36,29 @@ body
 	line-height: 30px
 
 
-/// Magnific-Popup User Styles
-// *
-// 	transition: filter 100ms ease
-// .mfp-wrap ~ *
-// 	filter: blur(10px)		
+// Magnific-Popup User Styles
+*
+	transition: filter 100ms ease
+.mfp-wrap ~ *
+	filter: blur(10px)		
 
-.mfp-preloader
-	width: 30px
-	height: 30px
-	background-color: #FFF
-	opacity: 0.65
-	margin: 0 auto
-	animation: rotateplane 1.2s infinite ease-in-out
+// .mfp-preloader
+// 	width: 30px
+// 	height: 30px
+// 	background-color: #FFF
+// 	opacity: 0.65
+// 	margin: 0 auto
+// 	animation: rotateplane 1.2s infinite ease-in-out
 
+// @keyframes rotateplane
+// 	0%
+// 		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
 
+// 	50%
+// 		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
 
-
-@keyframes rotateplane
-	0%
-		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
-
-	50%
-		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-
-	100%
-		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)			
+// 	100%
+// 		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)			
 
 
 .main-header
@@ -330,9 +327,9 @@ section
 		opacity: 0
 		+mt(400ms)	
 	img
-		+mt(600ms)
+		+mt(800ms)
 	&:hover img
-		transform: scale(1.2)	
+		transform: scale(1.2)
 	&:hover .overlay
 		opacity: 1	
 	&:hover h5, &:hover p
@@ -388,14 +385,61 @@ blockquote
 	img
 		min-height: 110px	
 
+/// Animations
+
+.animated
+	animation-duration: 1s
+	animation-fill-mode: both
+
+
+.jiggle
+	animation-name: jiggle
+	transform-origin: center
+	animation-iteration-count: infinite
+	animation-duration: 1s
+
+@keyframes jiggle
+	48%, 62%
+		transform: scale(1, 1)
+
+	50%
+		transform: scale(1.1, 0.9)
+
+	56%
+		transform: scale(0.9, 1.1) translate(0, -5px)
+
+	59%
+		transform: scale(1, 1) translate(0, -3px)
+
+.fadeIn
+	animation-name: fadeIn
+
+@keyframes fadeIn
+	0%
+		opacity: 0
+
+	100%
+		opacity: 1
+
+.fadeInUp
+	animation-name: fadeInUp
+
+@keyframes fadeInUp
+	0%
+		opacity: 0
+		transform: translate3d(0, 100%, 0)
+
+	100%
+		opacity: 1
+		transform: none
+
+	/// End animations	
+
 .facts
 	background: url(../img/section-bg.jpg) no-repeat center/cover
 	background-attachment: fixed
 	-webkit-transform:translatez(0)
 	color: #eee
-
-
-
 
 .f-wrap
 	max-width: 830px
@@ -553,7 +597,7 @@ a.twitter-link
 	transition: color .3s cubic-bezier(0.11, 0.7, 0, 1)
 	position: relative
 	z-index: 1
-	padding: 2px 6px
+	padding: 0 6px
 	&:after
 		position: absolute
 		top: 0
