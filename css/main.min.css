@@ -1019,7 +1019,12 @@ blockquote {
 
 .member {
   margin-bottom: 30px;
-  width: calc(99.9% * 1/4 - (30px - 30px * 1/4)); }
+  width: calc(99.9% * 1/4 - (30px - 30px * 1/4));
+  -webkit-animation: jiggle 1.5s ease-in-out infinite;
+          animation: jiggle 1.5s ease-in-out infinite;
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%; }
 
 .member:nth-child(1n) {
   float: left;
@@ -1071,23 +1076,28 @@ blockquote {
     font-size: 15px; }
   .member img {
     min-height: 110px; }
+  @media (max-width: 480px) {
+    .member {
+      -webkit-animation: none;
+              animation: none; } }
+  .member:first-child {
+    -webkit-animation-delay: 1434ms;
+            animation-delay: 1434ms; }
+  .member:nth-child(2) {
+    -webkit-animation-delay: 2781ms;
+            animation-delay: 2781ms; }
+  .member:nth-child(3) {
+    -webkit-animation-delay: 2212ms;
+            animation-delay: 2212ms; }
+  .member:nth-child(4) {
+    -webkit-animation-delay: 1850ms;
+            animation-delay: 1850ms; }
 
 .animated {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both; }
-
-.jiggle {
-  -webkit-animation-name: jiggle;
-          animation-name: jiggle;
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s; }
 
 @-webkit-keyframes jiggle {
   48%, 62% {
@@ -1239,9 +1249,6 @@ blockquote {
   @media (max-width: 991px) {
     .blog .row h2 {
       margin: 0 auto 15px; } }
-  @media (max-width: 480px) {
-    .blog .row h2 {
-      line-height: 1.3; } }
 
 .blog img {
   max-width: 100%; }
@@ -1620,15 +1627,24 @@ footer {
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   /**/
+  h2 {
+    line-height: 1.3; }
   .main-header {
     padding-top: 30px; }
+  .f-wrap {
+    padding: 60px 10px 30px; }
+  .carousel-c__item-border {
+    border-left: 0; }
   .header-center .btn {
     margin-bottom: 50px; }
   .services-block {
     text-align: center;
     margin-bottom: 30px; }
   .f-col {
-    line-height: 1.3; } }
+    line-height: 1.3;
+    font-size: 22px; }
+  .footer__links a {
+    margin-left: 13px; } }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {

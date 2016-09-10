@@ -1,14 +1,17 @@
 $(function() {
 
+	var $mainBody = $('body');
+	var $menu = $('.header-menu');
+	var toggleButton = $('#toggle');
 
-	var toggleMenu = function() {
-
-		var toggleButton = $('#toggle');
-		var menu = $('.header-menu');
+	function toggleMenu() {
 
 		toggleButton.on('click', function(){
 
-			menu.toggleClass('active');
+			$mainBody.css('overflow', 'hidden');
+
+			$menu.toggleClass('active');
+			$mainBody.addClass('js-nav-open');
 
 			if (toggleButton.hasClass('active')) {
 				toggleButton.removeClass('active').html('&#9776;');
@@ -22,6 +25,16 @@ $(function() {
 
 	toggleMenu();
 
+	$(window).on("click", function(e) {
+		if (
+			$mainBody.hasClass("js-nav-open") && 
+			!$(e.target).parents($menu).hasClass("active") && !$(e.target).hasClass("active")) {
+				$menu.removeClass("active");
+			toggleButton.removeClass('active').html('&#9776;');
+			$mainBody.css('overflow', 'auto');
+	}
+});
+
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
@@ -29,7 +42,13 @@ $(function() {
 		offset: 50,
 		mobile: false    
 	});
+
 	wow.init();
+
+
+	// if (window.matchMedia("(max-width: 768px)").matches) {
+	// 	$('.member').removeClass('wow jiggle');
+	// }	
 
 	$('header a[href*=#]').bind("click", function(e) {
 		var anchor = $(this);
@@ -59,24 +78,20 @@ $(function() {
 	});
 	
 
-		// Animate the scroll to top
-	$('.go-top').click(function() {
-		var $root = $('html, body');
-		$root.animate({
-			scrollTop: 0
-		}, 300);
+	// Animate the scroll to top
+	$('.go-top').on('click', function(e) {
+		e.preventDefault();
+		$('html, body').animate({scrollTop : 0}, 800);
 	});
-
 
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 1000) {
-			$('.go-top').fadeIn(300);
-		} 
-
-		else {
-			$('.go-top').fadeOut(300);
+			$('.go-top').fadeIn();
+		} else {
+			$('.go-top').fadeOut();
 		}
 	});
+
 	
 $(".carousel-a").owlCarousel({
     items: 5,
@@ -115,54 +130,12 @@ $(".carousel-a").owlCarousel({
     
   });
 
-// function carouselB(){
-// 	$(".carousel-b").owlCarousel({
-//     items: 4,
-//     margin: 0,
-//     dots: true,
-//     //autoplay: true,
-//     autoplayTimeout: 3000,
-//     loop: true,
-//     autoplayHoverPause: true,
-//     nav : false,
-// 		navText : "",
-//     fluidSpeed : 600,
-// 		autoplaySpeed : 600,
-// 		navSpeed : 600,
-// 		dotsSpeed : 600,
-// 		dragEndSpeed : 600,
-//     //animateOut: 'fadeOut',
-//     //animateIn: 'fadeIn'
-//     responsive : {
-//     0 : {
-//         	items: 1
-//     		},
-//     480 : {
-//         	items: 2
-//     		},
-//     600 : {
-//     			items: 3
-//     		},
-//     768 : {
-//         	items: 4
-//     		}
-// 			}
-    
-//   	});
-// 	}
-
 
 	$('.mix-controls a').on('click', function(e){
 		e.preventDefault();
 	});
 
-		$('.mix-container').mixItUp({
-			// callbacks: {
-			// 	onMixEnd: function(){
-			// 		carouselB();
-			// 	}
-			// }
-		});
+		$('.mix-container').mixItUp();
 
 
 	$(".quote-wrap").owlCarousel({
