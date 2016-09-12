@@ -584,12 +584,12 @@ img {
           user-select: none; }
 
 ::-moz-selection {
-  color: #fff;
-  background: #E64A19; }
+  color: white;
+  background: #e64a19; }
 
 ::selection {
-  color: #fff;
-  background: #E64A19; }
+  color: white;
+  background: #e64a19; }
 
 .btn {
   display: inline-block;
@@ -761,8 +761,14 @@ body {
     font-size: 36px; } }
   .header-center p {
     margin: 0 0 60px;
-    font-size: 18px;
+    font-size: calc(16px + 2 * ((100vw - 420px) / 860));
     max-width: 50%; }
+  @media screen and (min-width: 1280px) {
+  .header-center p {
+    font-size: 18px; } }
+  @media screen and (max-width: 420px) {
+  .header-center p {
+    font-size: 16px; } }
   .header-center .btn {
     font-size: 18px;
     border: 2px solid #212121;
@@ -1273,7 +1279,7 @@ blockquote {
           filter: grayscale(0); }
 
 .blog__title span {
-  background: linear-gradient(#E64A19, #E64A19) no-repeat;
+  background: linear-gradient(#e64a19, #e64a19) no-repeat;
   background-size: 0% 2px;
   background-position: 0% 100%;
   transition: background-size 200ms ease-in-out;
@@ -1332,29 +1338,28 @@ blockquote {
       .clients--posts .owl-dots .owl-dot.active {
         background: #e64a19; }
 
-.who-tweet a {
-  display: inline-block;
-  padding: 10px; }
-  .who-tweet a svg {
-    width: 27px;
-    transition: all 200ms ease; }
-
-.who-tweet:hover svg {
-  fill: #e64a19; }
-
-.who-tweet:hover a.twitter-link {
-  color: #fff; }
-  .who-tweet:hover a.twitter-link:after {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    transition: -webkit-transform 0.3s cubic-bezier(0.11, 0.7, 0, 1);
-    transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1);
-    transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1), -webkit-transform 0.3s cubic-bezier(0.11, 0.7, 0, 1); }
-
-.who-tweet p {
-  font-size: 20px;
-  line-height: 1.6;
-  margin-bottom: 25px; }
+.who-tweet {
+  box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.8); }
+  .who-tweet a {
+    display: inline-block;
+    padding: 10px; }
+    .who-tweet a svg {
+      width: 27px;
+      transition: all 200ms ease; }
+  .who-tweet:hover svg {
+    fill: #e64a19; }
+  .who-tweet:hover a.twitter-link {
+    color: #fff; }
+    .who-tweet:hover a.twitter-link:after {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      transition: -webkit-transform 0.3s cubic-bezier(0.11, 0.7, 0, 1);
+      transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1);
+      transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1), -webkit-transform 0.3s cubic-bezier(0.11, 0.7, 0, 1); }
+  .who-tweet p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 25px; }
 
 .twitter-user {
   margin: 40px auto 35px; }
@@ -1556,7 +1561,7 @@ footer {
     transition: all 200ms ease;
     fill: rgba(0, 0, 0, 0.2); }
   .go-top:hover svg g {
-    fill: #E64A19; }
+    fill: #e64a19; }
 
 .can {
   padding: 0;
