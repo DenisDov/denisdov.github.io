@@ -72,7 +72,8 @@ $(function() {
 		if($('.header-menu').hasClass('active')){
 			$('.header-menu').removeClass('active')
 				$('#toggle').html('&#9776;');
-		}
+		};
+		$mainBody.css('overflow', 'auto');
 	});
 
 	function resize() {
