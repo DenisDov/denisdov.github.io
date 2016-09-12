@@ -577,6 +577,20 @@ h4 {
 h6 {
   font-weight: 400; }
 
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+::-moz-selection {
+  color: #fff;
+  background: #E64A19; }
+
+::selection {
+  color: #fff;
+  background: #E64A19; }
+
 .btn {
   display: inline-block;
   -webkit-appearance: none;
@@ -1246,17 +1260,28 @@ blockquote {
       margin: 0 auto 15px; } }
 
 .blog img {
-  max-width: 100%; }
+  max-width: 100%;
+  transition: all 100ms ease;
+  -webkit-filter: grayscale(90%);
+          filter: grayscale(90%); }
 
 .blog__row:hover h2 span {
   background-size: 100% 2px; }
 
+.blog__row:hover img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0); }
+
 .blog__title span {
-  background: linear-gradient(black, black) no-repeat;
+  background: linear-gradient(#E64A19, #E64A19) no-repeat;
   background-size: 0% 2px;
   background-position: 0% 100%;
-  transition: background-size 100ms ease-in-out;
-  text-shadow: .03em .07em white, -.03em .07em white, 0 .03em white, 0 -.03em white, .06em .07em white, -.06em .07em white, .09em .07em white, -.09em .07em white, .12em .07em white, -.12em .07em white, .15em .07em white, -.15em .07em white; }
+  transition: background-size 200ms ease-in-out;
+  text-shadow: .03em .07em white, -.03em .07em white, 0 .03em white, 0 -.03em white, .06em .07em white, -.06em .07em white, .09em .07em white, -.09em .07em white, .12em .07em white, -.12em .07em white, .15em .07em white, -.15em .07em white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 .blog__picture {
   position: relative; }
@@ -1532,6 +1557,13 @@ footer {
     fill: rgba(0, 0, 0, 0.2); }
   .go-top:hover svg g {
     fill: #E64A19; }
+
+.can {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
 
 /*==========  Desktop First Method  ==========*/
 /* Large Devices, Wide Screens */

@@ -69,15 +69,15 @@ $(function() {
 		$mainBody.css('overflow', 'auto');
 	});
 
-	function resize() {
+	function onResize() {
 		$('.article-block p').equalHeights();
 		$('.member img').equalHeights();
 	}
 
-	resize();
+	onResize();
 
 	$(window).on('resize', function(){
-		resize();
+		onResize();
 	});
 	
 
@@ -217,6 +217,5 @@ $(".carousel-a").owlCarousel({
   }
 
   setInterval(function(){memberJiggle()}, 1000);
-
 
  });

@@ -532,20 +532,23 @@ blockquote
 	
 	img
 		max-width: 100%	
+		+mt(100ms)
+		filter: grayscale(90%)
 
 .blog__row:hover
 	h2 span
 		background-size: 100% 2px		
-
+	img
+		filter: grayscale(0)
 
 .blog__title
 	span
-		background: linear-gradient(black, black) no-repeat
+		background: linear-gradient(#E64A19, #E64A19) no-repeat
 		background-size: 0% 2px
 		background-position: 0% 100%
-		transition: background-size 100ms ease-in-out
+		transition: background-size 200ms ease-in-out
 		text-shadow: .03em .07em white, -.03em .07em white, 0 .03em white, 0 -.03em white, .06em .07em white, -.06em .07em white, .09em .07em white, -.09em .07em white, .12em .07em white, -.12em .07em white, .15em .07em white, -.15em .07em white
-
+		user-select: none
 
 .blog__picture
 	position: relative
@@ -800,7 +803,12 @@ footer
 			//transform: rotate(360deg)
 
 
-
+.can
+	padding: 0
+	margin: 0
+	height: 100%
+	width: 100%
+	overflow: hidden
 
 /// =================Media-Queries============
 @import 'media'
