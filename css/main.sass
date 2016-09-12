@@ -404,20 +404,18 @@ blockquote
 		font-size: 15px		
 	img
 		min-height: 110px	
-	animation: jiggle 1.5s ease-in-out infinite
+	//animation: jiggle 1.5s ease-in-out infinite
 	transform-origin: 50% 50%
-	@media (max-width: 480px)
-		animation: none
 	//animation: jiggle 1s ease-in-out infinite	
 
-	&:first-child
-		animation-delay: random(5000) + ms	
-	&:nth-child(2)
-		animation-delay: random(5000) + ms	
-	&:nth-child(3)
-		animation-delay: random(5000) + ms	
-	&:nth-child(4)
-		animation-delay: random(5000) + ms	
+	// &:first-child
+	// 	animation-delay: random(5000) + ms	
+	// &:nth-child(2)
+	// 	animation-delay: random(5000) + ms	
+	// &:nth-child(3)
+	// 	animation-delay: random(5000) + ms	
+	// &:nth-child(4)
+	// 	animation-delay: random(5000) + ms	
 
 /// Animations
 
@@ -425,6 +423,8 @@ blockquote
 	animation-duration: 1s
 	animation-fill-mode: both
 
+.jiggle
+	animation: jiggle 1s ease-in-out both
 
 @keyframes jiggle
 	48%, 62%
@@ -583,7 +583,6 @@ blockquote
 	background: radial-gradient(circle, #EFEFEF, #fff)
 	.owl-dots
 		text-align: center
-		//margin: 60px auto 10px
 		.owl-dot
 			display: none
 			margin: 0 5px
@@ -791,13 +790,14 @@ footer
 	z-index: 9999
 	line-height: 0
 	svg g
-		transform-origin: center
-		transition: transform .6s cubic-bezier(.68,-.55,.265,1.55)
+		//transform-origin: center
+		//transition: transform .6s cubic-bezier(.68,-.55,.265,1.55)
+		+mt(200ms)
 		fill: rgba(black, .2)
 	&:hover
 		svg g
 			fill: #E64A19
-			transform: rotate(360deg)
+			//transform: rotate(360deg)
 
 
 
