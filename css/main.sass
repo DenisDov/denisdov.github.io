@@ -34,10 +34,12 @@ body
 	display: none
 	font-size: 30px
 	line-height: 30px
+	user-select: none
 
 
 // Magnific-Popup User Styles
-*
+
+.portfolio *
 	transition: filter 100ms ease
 .mfp-wrap ~ *
 	filter: blur(10px)		
@@ -80,6 +82,7 @@ body
 		justify-content: space-between
 		flex-wrap: wrap	
 
+
 .header-menu 
 	font-family: 'SourceSansPro-Bold', sans-serif 
 	text-transform: uppercase
@@ -119,19 +122,12 @@ body
 		margin-bottom: 0.5em
 		font-family: 'SourceSansPro-Bold', sans-serif 
 		border-bottom: 4px solid transparent
-		border-image: 100% 0 linear-gradient(90deg, transparent 50%, currentColor 6em)
+		border-image: 100% 0 linear-gradient(90deg, transparent 50%, currentColor 200%)
+
 	p
 		margin: 0 0 60px
 		font-size: 18px
 		max-width: 50%
-	// .btn
-	// 	border: 2px solid $main-color
-	// 	font-size: 18px
-	// 	&:hover
-	// 		color: white
-	// 		background: $main-color
-	// 	&:active
-	// 		transform: translateY(3px)
 	.btn
 		font-size: 18px
 		border: 2px solid $main-color
@@ -150,7 +146,7 @@ body
 			height: 200%
 			background: rgba(white, .2)
 			transform: rotate(20deg)
-			+mt(500ms)
+			transition: all 500ms linear
 		&:hover 
 			background: $main-color
 			color: white
@@ -158,7 +154,7 @@ body
 				right: -50%
 		&:active
 			transform: translateY(3px)		
-				
+								
 
 ///sections==================
 
@@ -282,10 +278,10 @@ section
 			opacity: 1
 
 	.owl-prev
-		left: -25px
+		left: -10%
 		background: url(../img/c-arrows/chevron-left.svg) no-repeat center/cover	
 	.owl-next
-		right: -25px
+		right: -10%
 		background: url(../img/c-arrows/chevron-right.svg) no-repeat center/cover		
 
 ///carousel
@@ -315,11 +311,17 @@ section
 		display: inline-block
 		a
 			display: inline-block
+			font-variant: small-caps
 			margin: 0 10px
 			padding-bottom: 3px
 			+mt(200ms)
 			&:hover
+				box-shadow: inset 0 -3px 0 0 #efefef
+				color:  #e64a19	
+			&.active
+				color:  #e64a19	
 				box-shadow: inset 0 -3px 0 0 #e64a19	
+	
 
 .mix-container
 	display: flex
@@ -409,13 +411,13 @@ blockquote
 	//animation: jiggle 1s ease-in-out infinite	
 
 	&:first-child
-		animation-delay: 1434ms	
+		animation-delay: random(5000) + ms	
 	&:nth-child(2)
-		animation-delay: 2781ms	
+		animation-delay: random(5000) + ms	
 	&:nth-child(3)
-		animation-delay: 2212ms
+		animation-delay: random(5000) + ms	
 	&:nth-child(4)
-		animation-delay: 1850ms	
+		animation-delay: random(5000) + ms	
 
 /// Animations
 
@@ -578,6 +580,7 @@ blockquote
 	border-left: 3px solid white
 
 .clients--posts
+	background: radial-gradient(circle, #EFEFEF, #fff)
 	.owl-dots
 		text-align: center
 		//margin: 60px auto 10px
@@ -733,7 +736,7 @@ footer
 
 .btn-send
 	overflow: visible
-	padding: 0
+	padding-bottom: 10px
 	background-color: transparent
 	border: none
 	color: #999
@@ -745,7 +748,7 @@ footer
 		vertical-align: middle
 	svg
 		display: inline-block
-		vertical-align: middle
+		vertical-align: text-bottom
 		margin-left: 20px
 		transform-origin: center
 		+mt(300ms)		
@@ -754,7 +757,7 @@ footer
 	&:hover
 		color: #eee	
 		svg
-			transform: rotate(10deg)
+			transform: rotate(10deg) 
 	
 	&.clicked
 		color: #ddd
@@ -786,9 +789,8 @@ footer
 	display: none
 	cursor: pointer
 	z-index: 9999
-
+	line-height: 0
 	svg g
-		+mt(300ms)
 		transform-origin: center
 		transition: transform .6s cubic-bezier(.68,-.55,.265,1.55)
 		fill: rgba(black, .2)

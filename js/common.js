@@ -38,27 +38,35 @@ $(function() {
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
-	var wow = new WOW({  
-		offset: 50,
+	var wow = new WOW({
 		mobile: false    
 	});
 
 	wow.init();
 
 
-	// if (window.matchMedia("(max-width: 768px)").matches) {
-	// 	$('.member').removeClass('wow jiggle');
-	// }	
+	// $('header a[href*=#]').bind("click", function(e) {
+	// 	var anchor = $(this);
+	// 	var $root = $('html, body');
+	// 	$root.stop().animate({
+	// 		scrollTop: $(anchor.attr('href')).offset().top
+	// 	}, 800);
+	// 	e.preventDefault();
 
-	$('header a[href*=#]').bind("click", function(e) {
-		var anchor = $(this);
-		var $root = $('html, body');
-		$root.stop().animate({
-			scrollTop: $(anchor.attr('href')).offset().top
-		}, 1000);
-		e.preventDefault();
+	// });
 
-	});
+
+	function scrollNav() {
+		$('header a[href*=#]').click(function(){  
+			$('html, body').stop().animate({
+				scrollTop: $( $(this).attr('href') ).offset().top
+			}, 800);
+			return false;
+		});
+	};
+
+	scrollNav();
+
 
 	$('.header-menu a').on('click', function(){
 		if($('.header-menu').hasClass('active')){
