@@ -216,6 +216,10 @@ $(".carousel-a").owlCarousel({
   	.siblings().removeClass('jiggle');
   }
 
-  setInterval(function(){memberJiggle()}, 1000);
+  //setInterval(function(){memberJiggle()}, 1000);
+
+  if (window.matchMedia("(min-width: 400px)").matches) {
+  	setInterval(function(){memberJiggle()}, 1000);
+  }
 
  });

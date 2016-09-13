@@ -43,6 +43,9 @@ body
 	transition: filter 100ms ease
 .mfp-wrap ~ *
 	filter: blur(10px)		
+.mfp-zoom-out-cur,
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close
+	cursor: url('../img/ed.svg'), auto;	
 
 // .mfp-preloader
 // 	width: 30px
@@ -535,6 +538,7 @@ blockquote
 		align-items: center
 		@media (max-width: 767px)
 			flex-wrap: wrap
+			justify-content: center
 		h2
 			@media (max-width: 991px)
 				margin: 0 auto 15px
