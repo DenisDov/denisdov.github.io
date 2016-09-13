@@ -210,13 +210,13 @@ $(".carousel-a").owlCarousel({
   	e.preventDefault();
   });
 
-  function memberJiggle(){
+  function memberJiggle() {
   	var randNum = Math.floor(Math.random() * $('.member').length);
-  	$('.member').eq(randNum).addClass('jiggle')
-  	.siblings().removeClass('jiggle');
+		
+  	$('.member').eq(randNum).find('img').addClass('jiggle')
+  		.parent().siblings().find("img").removeClass('jiggle');
+		
   }
-
-  //setInterval(function(){memberJiggle()}, 1000);
 
   if (window.matchMedia("(min-width: 400px)").matches) {
   	setInterval(function(){memberJiggle()}, 1000);
