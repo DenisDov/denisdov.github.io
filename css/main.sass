@@ -222,10 +222,16 @@ section
 	min-height: 350px
 	margin: 0 auto 30px
 	position: relative
+
+	transform: translate3d(0, 0, 0)
+	backface-visibility: hidden
+	perspective: 1000
+
 	//box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 	+mt(200ms)
 	@media (max-width: 480px)
 		max-width: 320px
+		filter: none
 	h6
 		font-size: 14px
 		//font-weight: 400
