@@ -214,6 +214,9 @@ section
 	.txt-sizer-760
 		margin-bottom: 100px
 
+.article__wrap
+	display: block
+
 .article-block
 	text-align: left
 	color: #eee
@@ -226,9 +229,9 @@ section
 	margin: 0 auto 30px
 	position: relative
 
-	transform: translate3d(0, 0, 0)
-	backface-visibility: hidden
-	perspective: 1000
+	//transform: translate3d(0, 0, 0)
+	//backface-visibility: hidden
+	//perspective: 1000
 
 	//box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 	+mt(200ms)
@@ -260,6 +263,21 @@ section
 		filter: none
 	&:hover:before
 		opacity: 1	
+
+.spaceInDown
+	-webkit-animation-name: spaceInDown
+	animation-name: spaceInDown
+
+@keyframes spaceInDown
+	0%
+		opacity: 0
+		transform-origin: 50% 100%
+		transform: scale(0.2) translate(0%, 200%)
+
+	100%
+		opacity: 1
+		transform-origin: 50% 100%
+		transform: scale(1) translate(0%, 0%)
 
 .article-block__user
 	img

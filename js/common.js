@@ -232,7 +232,7 @@ $(".carousel-a").owlCarousel({
 	};
 
 	var counterWayPoint = function() {
-			$('.js-counter').waypoint( function( direction ) {
+			$('.facts').waypoint( function( direction ) {
 
 				if( direction === 'down') {				
 					counter();
@@ -241,5 +241,14 @@ $(".carousel-a").owlCarousel({
 	};
 
 	counterWayPoint();
+
+	// 	var articleAnimate = function() {
+	// 		$('.facts').waypoint( function( direction ) {
+
+	// 			if( direction === 'down') {				
+	// 				counter();
+	// 			}
+	// 		}, { offset: '75%' } );
+	// };
 
  });

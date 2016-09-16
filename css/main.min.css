@@ -853,6 +853,9 @@ section {
 .articles .txt-sizer-760 {
   margin-bottom: 100px; }
 
+.article__wrap {
+  display: block; }
+
 .article-block {
   text-align: left;
   color: #eee;
@@ -864,12 +867,6 @@ section {
   min-height: 350px;
   margin: 0 auto 30px;
   position: relative;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-perspective: 1000;
-          perspective: 1000;
   transition: all 200ms ease; }
   @media (max-width: 480px) {
     .article-block {
@@ -902,6 +899,38 @@ section {
             filter: none; }
   .article-block:hover:before {
     opacity: 1; }
+
+.spaceInDown {
+  -webkit-animation-name: spaceInDown;
+  animation-name: spaceInDown; }
+
+@-webkit-keyframes spaceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(0.2) translate(0%, 200%);
+            transform: scale(0.2) translate(0%, 200%); }
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(1) translate(0%, 0%);
+            transform: scale(1) translate(0%, 0%); } }
+
+@keyframes spaceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(0.2) translate(0%, 200%);
+            transform: scale(0.2) translate(0%, 200%); }
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: scale(1) translate(0%, 0%);
+            transform: scale(1) translate(0%, 0%); } }
 
 .article-block__user img {
   float: left;
@@ -1675,6 +1704,8 @@ footer {
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   /**/
+  .main-header {
+    min-height: auto; }
   p {
     line-height: 1.7; }
   .who-tweet p {
