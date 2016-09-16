@@ -237,7 +237,7 @@ $(".carousel-a").owlCarousel({
 				if( direction === 'down') {				
 					counter();
 				}
-			});
+			}, { offset: '75%' } );
 	};
 
 	counterWayPoint();
