@@ -528,6 +528,46 @@ img.mfp-img {
     padding-left: 6px;
     padding-right: 6px; } }
 
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.eot");
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.eot?#iefix") format('embedded-opentype'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.woff") format('woff'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf") format('truetype'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.svg") format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'SourceSansPro-Semibold';
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.eot");
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.eot?#iefix") format('embedded-opentype'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.woff") format('woff'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf") format('truetype'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.svg") format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.eot");
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.eot?#iefix") format('embedded-opentype'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.woff") format('woff'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf") format('truetype'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.svg") format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'SourceSansPro-Black';
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Black.eot");
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Black.eot?#iefix") format('embedded-opentype'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Black.woff") format('woff'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Black.ttf") format('truetype'),
+       url("../fonts/Source_Sans_Pro/SourceSansPro-Black.svg") format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
 a, a:hover, a:focus, a:active {
   color: black;
   text-decoration: none;
@@ -608,46 +648,6 @@ img {
   overflow: hidden;
   transition: all 100ms ease-in-out;
   cursor: pointer; }
-
-@font-face {
-  font-family: 'SourceSansPro-Regular';
-  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.eot");
-  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.eot?#iefix") format('embedded-opentype'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.woff") format('woff'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf") format('truetype'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.svg") format('svg');
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'SourceSansPro-Semibold';
-  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.eot");
-  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.eot?#iefix") format('embedded-opentype'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.woff") format('woff'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf") format('truetype'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.svg") format('svg');
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'SourceSansPro-Bold';
-  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.eot");
-  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.eot?#iefix") format('embedded-opentype'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.woff") format('woff'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf") format('truetype'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.svg") format('svg');
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'SourceSansPro-Black';
-  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Black.eot");
-  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Black.eot?#iefix") format('embedded-opentype'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Black.woff") format('woff'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Black.ttf") format('truetype'),
-       url("../fonts/Source_Sans_Pro/SourceSansPro-Black.svg") format('svg');
-  font-weight: normal;
-  font-style: normal; }
 
 body {
   font-size: 16px;
@@ -935,11 +935,11 @@ section {
     opacity: 1; }
 
 .clients .owl-prev {
-  left: -10%;
+  left: 0;
   background: url(../img/c-arrows/chevron-left.svg) no-repeat center/cover; }
 
 .clients .owl-next {
-  right: -10%;
+  right: 0;
   background: url(../img/c-arrows/chevron-right.svg) no-repeat center/cover; }
 
 .portfolio hr {
@@ -1285,8 +1285,8 @@ blockquote {
 .blog img {
   max-width: 100%;
   transition: all 100ms ease;
-  -webkit-filter: grayscale(90%);
-          filter: grayscale(90%); }
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%); }
 
 .blog__row:hover h2 span {
   background-size: 100% 2px; }

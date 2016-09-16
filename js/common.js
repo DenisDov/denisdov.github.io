@@ -222,4 +222,24 @@ $(".carousel-a").owlCarousel({
   	setInterval(function(){memberJiggle()}, 1000);
   }
 
+  	// Counter 
+	var counter = function() {
+		$('.js-counter').countTo({
+			formatter: function (value, options) {
+		      	return value.toFixed(options.decimals);
+		    },
+		});
+	};
+
+	var counterWayPoint = function() {
+			$('.js-counter').waypoint( function( direction ) {
+
+				if( direction === 'down') {				
+					counter();
+				}
+			});
+	};
+
+	counterWayPoint();
+
  });

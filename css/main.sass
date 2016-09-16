@@ -3,8 +3,9 @@
 //@import '../libs/remodal/remodal-default-theme'
 @import '../libs/owl/owl.carousel'
 @import '../libs/magnific-popup/dist/magnific-popup.sass'
-//@import '../libs/animate/animate'
 
+/// ================Fonts====================
+@import 'fonts'
 /// ================Mixins===================
 @import 'mixins'
 /// ================Vars=====================
@@ -13,8 +14,7 @@
 @import 'base'
 /// ================Buttons==================
 @import 'buttons'
-/// ================Fonts====================
-@import 'fonts'
+
 
 
 
@@ -291,10 +291,10 @@ section
 			opacity: 1
 
 	.owl-prev
-		left: -10%
+		left: 0
 		background: url(../img/c-arrows/chevron-left.svg) no-repeat center/cover	
 	.owl-next
-		right: -10%
+		right: 0
 		background: url(../img/c-arrows/chevron-right.svg) no-repeat center/cover		
 
 ///carousel
@@ -547,7 +547,7 @@ blockquote
 	img
 		max-width: 100%	
 		+mt(100ms)
-		filter: grayscale(90%)
+		filter: grayscale(100%)
 
 .blog__row:hover
 	h2 span
