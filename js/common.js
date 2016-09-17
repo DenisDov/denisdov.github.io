@@ -14,9 +14,9 @@ $(function() {
 			$mainBody.addClass('js-nav-open');
 
 			if (toggleButton.hasClass('active')) {
-				toggleButton.removeClass('active').html('&#9776;');
+				toggleButton.removeClass('active');
 			} else {
-				toggleButton.addClass('active').html('&#10005;');
+				toggleButton.addClass('active');
 			} 
 
 		});
@@ -30,7 +30,7 @@ $(function() {
 			$mainBody.hasClass("js-nav-open") && 
 			!$(e.target).parents($menu).hasClass("active") && !$(e.target).hasClass("active")) {
 			$menu.removeClass("active");
-		toggleButton.removeClass('active').html('&#9776;');
+		toggleButton.removeClass('active');
 		$mainBody.css('overflow', 'auto');
 	}
 });
@@ -64,7 +64,7 @@ $(function() {
 	$('.header-menu a').on('click', function(){
 		if($('.header-menu').hasClass('active')){
 			$('.header-menu').removeClass('active')
-				$('#toggle').html('&#9776;');
+				// $('#toggle').html('&#9776;');
 		};
 		$mainBody.css('overflow', 'auto');
 	});

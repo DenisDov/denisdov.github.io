@@ -32,9 +32,34 @@ body
 
 #toggle
 	display: none
-	font-size: 30px
-	line-height: 30px
 	user-select: none
+
+#toggle svg
+	width: 100px
+	height: 80px
+	cursor: pointer
+	transform: translate3d(0, 11px, 0)
+
+#toggle	path
+	fill: none
+	transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25)
+	stroke-width: 40px
+	stroke-linecap: round
+	stroke: $main-color
+	stroke-dashoffset: 0px
+
+path#top, path#bottom
+	stroke-dasharray: 240px 950px
+#middle
+	stroke-dasharray: 240px 240px
+
+.active path
+	&#top, &#bottom
+		stroke-dashoffset: -650px
+		stroke-dashoffset: -650px
+	&#middle
+		stroke-dashoffset: -115px
+		stroke-dasharray: 1px 220px	
 
 
 // Magnific-Popup User Styles
@@ -83,6 +108,7 @@ body
 	nav
 		display: flex
 		justify-content: space-between
+		align-items: center
 		flex-wrap: wrap	
 
 
