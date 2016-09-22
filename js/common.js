@@ -6,7 +6,7 @@ $(function() {
 
 	function toggleMenu() {
 
-		toggleButton.on('click', function(){
+		toggleButton.bind('click', function(){
 
 			$mainBody.css('overflow', 'hidden');
 
@@ -220,35 +220,34 @@ $(".carousel-a").owlCarousel({
 
   if (window.matchMedia("(min-width: 400px)").matches) {
   	setInterval(function(){memberJiggle()}, 1000);
-  }
+  };
 
+  
   	// Counter 
-	var counter = function() {
-		$('.js-counter').countTo({
-			formatter: function (value, options) {
-		      	return value.toFixed(options.decimals);
-		    },
-		});
-	};
 
-	var counterWayPoint = function() {
-			$('.facts').waypoint( function( direction ) {
+  		$(".facts").waypoint(function() {
 
-				if( direction === 'down') {				
-					counter();
-				}
-			}, { offset: '75%' } );
-	};
+  			$({blurRadius: 5}).animate({blurRadius: 0}, {
+  				duration: 1200,
+  				easing: 'swing',
+  				step: function() {
+  					$(".js-counter").css({
+  						"-webkit-filter": "blur("+this.blurRadius+"px)",
+  						"filter": "blur("+this.blurRadius+"px)"
+  					});
+  				}
+  			});
+  			var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(' ');
+  			$(".js-counter").each(function() {
+  				var tcount = $(this).data("count");
+  				$(this).animateNumber({ number: tcount,
+  					easing: 'linear',
+  					numberStep: comma_separator_number_step},
+  					1200);
+  			});
+  			this.destroy();
 
-	counterWayPoint();
+  		});
 
-	// 	var articleAnimate = function() {
-	// 		$('.facts').waypoint( function( direction ) {
-
-	// 			if( direction === 'down') {				
-	// 				counter();
-	// 			}
-	// 		}, { offset: '75%' } );
-	// };
 
  });
