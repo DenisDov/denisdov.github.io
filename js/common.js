@@ -218,12 +218,14 @@ $(".carousel-a").owlCarousel({
 		
   }
 
-  if (window.matchMedia("(min-width: 400px)").matches) {
+  if (window.matchMedia("(min-width: 480px)").matches) {
   	setInterval(function(){memberJiggle()}, 1000);
+  	animNumbers()
   };
 
-  
   	// Counter 
+
+  	function animNumbers(){
 
   		$(".facts").waypoint(function() {
 
@@ -248,6 +250,12 @@ $(".carousel-a").owlCarousel({
   			this.destroy();
 
   		});
+  	};
+	
 
+  	$('.js-counter').each(function(){
+  		var count = $(this).data("count");
+  		$(this).text(count);
+  	});
 
  });
